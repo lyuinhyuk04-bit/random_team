@@ -1,0 +1,354 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    padding: 35px 20px;
+    background:
+        radial-gradient(circle at 20% 10%, #24204b 0, transparent 35%),
+        radial-gradient(circle at 90% 80%, #29172f 0, transparent 35%),
+        #10111b;
+    color: #f5f5ff;
+    font-family: 'Pretendard', sans-serif;
+}
+
+/* 상단 제목 */
+.main-header {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.game-name {
+    color: #ff536f;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    margin-bottom: 12px;
+}
+
+.main-header h1 {
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    margin-top: 12px;
+    color: #9295b0;
+    font-size: 14px;
+}
+
+/* 전체 영역 */
+.container {
+    max-width: 1250px;
+    margin: auto;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "five four"
+        "two maps";
+    gap: 22px;
+    align-items: start;
+}
+
+/* 카드 공통 */
+.match-card,
+.map-section {
+    padding: 22px;
+    background: rgba(25, 27, 43, 0.92);
+    border: 1px solid #393b58;
+    border-radius: 17px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.five-card {
+    grid-area: five;
+    border-color: #438fff;
+    box-shadow: 0 0 15px rgba(67, 143, 255, 0.12);
+}
+
+.four-card {
+    grid-area: four;
+    border-color: #ff5476;
+    box-shadow: 0 0 15px rgba(255, 84, 118, 0.12);
+}
+
+.two-card {
+    grid-area: two;
+    border-color: #9b68ff;
+    box-shadow: 0 0 15px rgba(155, 104, 255, 0.12);
+}
+
+.map-section {
+    grid-area: maps;
+    border-color: #9b68ff;
+}
+
+/* 카드 제목 */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.card-header h2 {
+    font-size: 23px;
+    font-weight: 900;
+}
+
+.card-header span {
+    padding: 7px 13px;
+    border: 1px solid #7965f5;
+    border-radius: 20px;
+    color: #c7baff;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* 대진표 */
+.match-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.match-row {
+    display: grid;
+    grid-template-columns: 1fr 42px 1fr;
+    align-items: center;
+    gap: 8px;
+}
+
+.player {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 8px;
+    border-radius: 9px;
+    outline: none;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    transition: 0.2s;
+}
+
+.player.left {
+    background: rgba(40, 105, 210, 0.2);
+    border: 1px solid #398dff;
+}
+
+.player.right {
+    background: rgba(220, 49, 88, 0.17);
+    border: 1px solid #ff5476;
+}
+
+.player:focus {
+    box-shadow: 0 0 12px rgba(121, 101, 245, 0.5);
+}
+
+.vs {
+    text-align: center;
+    color: #b7b4e9;
+    font-weight: 900;
+    font-size: 15px;
+}
+
+/* 버튼 */
+.card-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+button {
+    border: none;
+    border-radius: 9px;
+    font-family: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    filter: brightness(1.15);
+    transform: translateY(-2px);
+}
+
+.draw-button {
+    padding: 13px;
+    color: white;
+    background: linear-gradient(110deg, #6652df, #883bdf);
+    box-shadow: 0 4px 15px rgba(111, 72, 230, 0.25);
+}
+
+.clear-button {
+    padding: 13px;
+    color: #d0d1e4;
+    background: #303246;
+    border: 1px solid #41445d;
+}
+
+/* 맵 영역 */
+.map-description {
+    color: #9295b0;
+    font-size: 12px;
+    margin-top: -8px;
+    margin-bottom: 12px;
+}
+
+/* 맵 선택 카드 */
+.map-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+}
+
+.map-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    min-width: 0;
+    padding: 8px 7px;
+    background: #25283a;
+    border: 1px solid #41445d;
+    border-radius: 7px;
+    color: #c5c8dd;
+    font-size: 11px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.map-option.selected {
+    background: #30294f;
+    border-color: #7965f5;
+    color: #c7baff;
+}
+
+.map-option input {
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    flex-shrink: 0;
+    accent-color: #7965f5;
+    cursor: pointer;
+}
+
+/* 전체 선택 / 해제 */
+.map-controls {
+    display: flex;
+    gap: 6px;
+    margin-top: 9px;
+}
+
+.map-controls button {
+    flex: 1;
+    padding: 8px;
+    font-size: 11px;
+    color: #c4c5dc;
+    background: #303246;
+    border: 1px solid #41445d;
+}
+
+/* 맵 결과 */
+.map-result-area {
+    margin-top: 12px;
+    padding: 11px;
+    background: #202337;
+    border: 1px solid #41445d;
+    border-radius: 10px;
+}
+
+.map-result-area p {
+    margin-bottom: 8px;
+    color: #9295b0;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.map-result {
+    padding: 12px 8px;
+    margin-bottom: 9px;
+    background: linear-gradient(120deg, #30294f, #252b46);
+    color: #c7baff;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 19px;
+    font-weight: 900;
+}
+
+#mapDrawBtn {
+    width: 100%;
+    padding: 11px;
+    font-size: 12px;
+}
+
+/* 하단 */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #656982;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+/* 태블릿 */
+@media (max-width: 850px) {
+    .games-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "five"
+            "four"
+            "two"
+            "maps";
+    }
+
+    .main-header h1 {
+        font-size: 32px;
+    }
+}
+
+/* 작은 모바일 */
+@media (max-width: 450px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    .match-card,
+    .map-section {
+        padding: 15px;
+    }
+
+    .card-header h2 {
+        font-size: 19px;
+    }
+
+    .player {
+        padding: 10px 4px;
+        font-size: 12px;
+    }
+
+    .match-row {
+        grid-template-columns: 1fr 30px 1fr;
+        gap: 5px;
+    }
+
+    .map-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .main-header h1 {
+        font-size: 27px;
+    }
+}

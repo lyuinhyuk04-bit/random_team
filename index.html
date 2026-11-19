@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>발로란트 랜덤 매치</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="main-header">
+        <p class="game-name">VALORANT RANDOM</p>
+        <h1>랜덤 매치 생성기</h1>
+        <p class="subtitle">원하는 대진과 맵을 무작위로 선택하세요</p>
+    </header>
+
+    <main class="container">
+
+        <div class="games-grid">
+
+            <!-- 5 대 5 -->
+            <section class="match-card five-card">
+                <div class="card-header">
+                    <h2>5 VS 5</h2>
+                    <span>10명</span>
+                </div>
+
+                <div class="match-list" id="fiveList"></div>
+
+                <div class="card-buttons">
+                    <button class="draw-button" data-mode="five">랜덤 추첨</button>
+                    <button class="clear-button" data-mode="five">초기화</button>
+                </div>
+            </section>
+
+            <!-- 4 대 4 -->
+            <section class="match-card four-card">
+                <div class="card-header">
+                    <h2>4 VS 4</h2>
+                    <span>8명</span>
+                </div>
+
+                <div class="match-list" id="fourList"></div>
+
+                <div class="card-buttons">
+                    <button class="draw-button" data-mode="four">랜덤 추첨</button>
+                    <button class="clear-button" data-mode="four">초기화</button>
+                </div>
+            </section>
+
+            <!-- 2 대 2 -->
+            <section class="match-card two-card">
+                <div class="card-header">
+                    <h2>2 VS 2</h2>
+                    <span>4명</span>
+                </div>
+
+                <div class="match-list" id="twoList"></div>
+
+                <div class="card-buttons">
+                    <button class="draw-button" data-mode="two">랜덤 추첨</button>
+                    <button class="clear-button" data-mode="two">초기화</button>
+                </div>
+            </section>
+
+            <!-- 맵 랜덤 -->
+            <section class="map-section">
+                <div class="card-header">
+                    <h2>맵 랜덤 선택</h2>
+                </div>
+
+                <p class="map-description">
+                    랜덤으로 추첨할 맵을 선택하세요.
+                </p>
+
+                <!-- 맵 목록 -->
+                <div class="map-list" id="mapList"></div>
+
+                <!-- 전체 선택 / 해제 -->
+                <div class="map-controls">
+                    <button id="selectAllBtn">전체 선택</button>
+                    <button id="deselectAllBtn">전체 해제</button>
+                </div>
+
+                <!-- 추첨 결과 -->
+                <div class="map-result-area">
+                    <p>랜덤 추첨 결과</p>
+                    <div class="map-result" id="mapResult">
+                        추첨 대기 중
+                    </div>
+
+                    <button id="mapDrawBtn" class="draw-button">
+                        랜덤 맵 뽑기
+                    </button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>VALORANT RANDOM MATCH</p>
+    </footer>
+
+</body>
+</html>
